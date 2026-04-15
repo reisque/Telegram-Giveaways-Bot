@@ -1,0 +1,36 @@
+Telegram Giveaway Bot - Setup Instructions
+
+1. Install Python 3.10 or newer.
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Create your bot using BotFather and copy the bot token.
+4. Add the bot to your Telegram channel.
+5. Make sure the bot can access member information for the target channel.
+6. Set these environment variables before starting the bot:
+   - BOT_TOKEN
+   - CHANNEL_USERNAME
+   - START_FILE
+   - USERS_FILE
+   - MAX_SPOTS
+7. Run the bot:
+   python bot.py
+
+Important behavior:
+- start.txt stores every /start attempt, including repeated ones.
+- users.txt stores only unique participant IDs.
+- The bot only allows entry after the user joins the required channel.
+- If MAX_SPOTS is reached, new users are blocked from joining.
+
+Recommended GitHub files included:
+- README.md
+- requirements.txt
+- .gitignore
+- .env.example
+- instructions.mb
+- bot.py
+
+Recommended improvements for future versions:
+- Replace text files with SQLite
+- Add admin commands for stats
+- Add an export command for participants
+- Add structured error handling and monitoring
